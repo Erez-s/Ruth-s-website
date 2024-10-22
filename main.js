@@ -9,7 +9,8 @@ function loadBio(lang) {
     loadBiographyContent(lang);
 
     // Show the selected bio
-    document.getElementById(`bio-${lang}`).style.display = 'block';
+    const selectedBio = document.getElementById(`bio-${lang}`);
+    selectedBio.style.display = 'block';
 
     // Remove 'selected' class from all buttons
     document.getElementById('btn-en').classList.remove('selected');
@@ -18,6 +19,15 @@ function loadBio(lang) {
 
     // Add 'selected' class to the currently clicked button
     document.getElementById(`btn-${lang}`).classList.add('selected');
+
+    // Handle RTL for Hebrew and LTR for other languages
+    if (lang === 'he') {
+        selectedBio.setAttribute('dir', 'rtl');  // Set right-to-left for Hebrew
+        selectedBio.style.textAlign = 'right';  // Align text to the right
+    } else {
+        selectedBio.setAttribute('dir', 'ltr');  // Set left-to-right for English/German
+        selectedBio.style.textAlign = 'left';  // Align text to the left
+    }
 }
 
 // Function to display events
@@ -38,6 +48,16 @@ function displayEvents() {
         }
     });
 }
+
+document.querySelectorAll('.navbar-nav .nav-link').forEach(item => {
+    item.addEventListener('click', () => {
+        // Collapse the navbar after clicking a link
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        if (navbarCollapse.classList.contains('show')) {
+            $('.navbar-collapse').collapse('hide');
+        }
+    });
+});
 
 // Load English bio by default when the page loads
 window.onload = function() {

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css"> <!-- Link to the external CSS file -->
+    <title>Ruth Scholz</title>
 </head>
 
 <body>
@@ -19,7 +20,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto"> <!-- 'ml-auto' pushes items to the right -->
                 <li class="nav-item">
                     <a class="nav-link" href="#biography">Biography</a>
                 </li>
@@ -42,15 +43,14 @@
         <img src="images/main.jpg" alt="Main" class="img-fluid" style="max-width: 100%; height: auto;">
     </h2>
     <div class="text-center mb-4">
-        <div class="text-center mb-4">
-            <button id="btn-en" class="btn btn-black" onclick="loadBio('en')">English</button>
-            <button id="btn-he" class="btn btn-black" onclick="loadBio('he')">Hebrew</button>
-            <button id="btn-de" class="btn btn-black" onclick="loadBio('de')">German</button>
-        </div>
+        <button id="btn-en" class="btn btn-black" onclick="loadBio('en')">English</button>
+        <button id="btn-he" class="btn btn-black" onclick="loadBio('he')">Hebrew</button>
+        <button id="btn-de" class="btn btn-black" onclick="loadBio('de')">German</button>
     </div>
     
+    <!-- English, Hebrew, and German sections -->
     <div id="bio-en" class="bio"></div>
-    <div id="bio-he" class="bio"></div>
+    <div id="bio-he" class="bio" dir="rtl"></div> <!-- Added dir="rtl" for Hebrew -->
     <div id="bio-de" class="bio"></div>
 </section>
 
@@ -138,7 +138,7 @@
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3">
         <p>
-            <img src="images/logo.png" alt="Ruth Scholz Logo" style="height: 80px; margin-right: 10px;"> <!-- Increased height to 40px -->
+            <img src="images/logo.png" alt="Ruth Scholz Logo" style="height: 50px; margin-right: 10px;"> <!-- Increased height to 40px -->
             &copy; 2024 Ruth Scholz | All rights reserved
         </p>
     </footer>
