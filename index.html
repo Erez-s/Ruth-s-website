@@ -6,82 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* Ensure media squares are proportional */
-        .media-square {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            padding-top: 100%; /* Aspect ratio 1:1 */
-        }
-
-        .media-square img,
-        .media-square iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Social media icons styling */
-        .social-icons img {
-            width: 40px;
-            filter: grayscale(100%);
-            margin: 0 10px;
-        }
-
-        .social-icons img:hover {
-            filter: grayscale(0%);
-        }
-
-        /* Smooth scrolling for anchor links */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Adjust text alignment for smaller screens */
-        @media (max-width: 768px) {
-            #biography button {
-                margin-bottom: 15px;
-            }
-
-            #biography {
-                text-align: center;
-            }
-        }
-
-        .btn-black {
-            background-color: black;
-            color: white;
-            border: none;
-        }
-
-        .btn-black.selected {
-            background-color: white;
-            color: black;
-            border: 2px solid black; /* Optional: adds a border for visibility */
-        }
-
-        .btn-black:hover {
-            opacity: 0.8; /* Optional hover effect */
-        }
-
-        .carousel-img {
-        max-height: 500px; /* Set a maximum height */
-        width: 100%; /* Full width */
-        object-fit: contain; /* Maintain aspect ratio without cropping */
-
-                }
-
-        .media-square-img-r {
-            width: 100%;  /* Makes the image responsive */
-            height: auto; /* Maintains aspect ratio */
-            max-height: 400px; /* Optional: Set a maximum height to control size */
-            object-fit: cover; /* Optional: This keeps the image covering the area without distorting */
-}
-    </style>
+    <link rel="stylesheet" href="style.css"> <!-- Link to the external CSS file -->
 </head>
 
 <body>
@@ -167,17 +92,9 @@
     </section>
 
 
-    <!-- Upcoming Events Section -->
     <section id="events" class="container py-5">
         <h2 class="text-center">Upcoming Events</h2>
-        <ul class="list-group">
-            <li class="list-group-item">
-                Chamber music concert: 23/2/2025, 
-                <a href="https://hso-haifa.co.il/en/events/chamber-the-basses-in-the-center" target="_blank" rel="noopener noreferrer">
-                    https://hso-haifa.co.il/en/events/chamber-the-basses-in-the-center
-                </a>
-            </li>            
-        </ul>
+        <ul id="events-list" class="list-group"></ul>
     </section>
 
     <!-- Contact Section -->
@@ -209,42 +126,14 @@
         </p>
     </footer>
 
-    <!-- Optional JavaScript -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <!-- Load external JS for data -->
     <script src="biographies.js"></script>
-
-    <!-- Script for handling biography display -->
-    <script>
-        function loadBio(lang) {
-            // Hide all bios
-            document.getElementById('bio-en').style.display = 'none';
-            document.getElementById('bio-he').style.display = 'none';
-            document.getElementById('bio-de').style.display = 'none';
-
-            // Load content for the selected bio
-            loadBiographyContent(lang);
-
-            // Show the selected bio
-            document.getElementById(`bio-${lang}`).style.display = 'block';
-
-            // Remove 'selected' class from all buttons
-            document.getElementById('btn-en').classList.remove('selected');
-            document.getElementById('btn-he').classList.remove('selected');
-            document.getElementById('btn-de').classList.remove('selected');
-
-            // Add 'selected' class to the currently clicked button
-            document.getElementById(`btn-${lang}`).classList.add('selected');
-        }
-
-        // Load English bio by default when the page loads
-        window.onload = function() {
-            loadBio('en'); // Load English bio by default
-        };
-    </script>
+    <script src="events.js"></script>
+    <script src="main.js"></script>
 
 </body>
 
