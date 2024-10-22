@@ -16,6 +16,34 @@
     object-fit: cover;
 }
 
+.navbar {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between items */
+    padding: 0; /* Set padding to 0 */
+    height: 75px; /* Fixed height for navbar */
+}
+
+.navbar-brand {
+    display: flex; /* Ensure brand is also a flex container */
+    align-items: center; /* Center logo vertically */
+}
+
+.logo {
+    max-height: 68px; /* Limit the height of the logo to fit within the navbar */
+    margin: 0; /* Remove margins */
+    display: block; /* Ensure no extra space around */
+    width: auto; /* Maintain aspect ratio */
+}
+
+.collapse {
+    flex-grow: 1; /* Allow the collapse section to grow */
+    display: flex; /* Ensure it also uses flex */
+}
+
+.navbar-nav {
+    margin-left: auto; /* Push nav items to the right */
+}
 /* Social media icons styling */
 .social-icons img {
     width: 40px;
@@ -25,6 +53,17 @@
 
 .social-icons img:hover {
     filter: grayscale(0%);
+}
+
+.social-icons a img,
+.social-icons a .fas {
+    width: 30px;  /* Set the width for image icons */
+    height: 30px; /* Set the height for image icons */
+    margin: 0 10px; /* Add some spacing between icons */
+}
+
+footer {
+    text-align: center; /* Center text in footer */
 }
 
 /* Smooth scrolling for anchor links */
@@ -57,12 +96,6 @@ html {
 
 .btn-black:hover {
     opacity: 0.8; /* Optional hover effect */
-}
-
-.carousel-img {
-    max-height: 500px; /* Set a maximum height */
-    width: 100%; /* Full width */
-    object-fit: contain; /* Maintain aspect ratio without cropping */
 }
 
 .media-square-img-r {
